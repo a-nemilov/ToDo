@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import './index.css';
 import AddTask from './AddTask';
 import ToDoList from './ToDoList';
@@ -92,7 +91,7 @@ class App extends Component {
 
   drop = (event) => {
     event.preventDefault();
-    // const data = event.dataTransfer.getData("text");
+     const data = event.dataTransfer.getData("text");
     console.log(data);
     // получить объект 
     const id = event.target.appendChild(document.getElementById(data)).id;
