@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './index.css';
+
 class DoneList extends Component {
 
     render() {
@@ -12,11 +13,12 @@ class DoneList extends Component {
                 className="done"
                 id="done"
             >
-                <div>Done</div>
+                <div className="green">Done</div>
                 {arrDone.map((e) =>
                     <div
+                        key={e.id}
                         id={e.id}
-                        draggable="true"
+                        draggable
                         className="card"
                         onDragStart={drag}
                     >
@@ -24,9 +26,9 @@ class DoneList extends Component {
                             id={e.id}
                             onClick={removeCard}
                             className="remove-card">x</div>
-                        <div>{e.title}</div>
-                        <div>{e.description}</div>
-                        <div>{e.status}</div>
+                        <div className="title">{e.title}</div>
+                        <div className="description">{e.description}</div>
+                        <div className="status">{e.status}</div>
                     </div>
                 )}
             </div>

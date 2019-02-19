@@ -17,8 +17,6 @@ class App extends Component {
     this.localStorage();
   }
 
-
-
   addTask = () => {
     this.setState({
       popUp: true,
@@ -71,7 +69,7 @@ class App extends Component {
         currentValueDescrip: ''
       });
     } else {
-      alert("заполните поля");
+      alert("Title is empty!!!!");
     }
     this.localStorage();
   }
@@ -91,20 +89,17 @@ class App extends Component {
 
   drop = (event) => {
     event.preventDefault();
-     const data = event.dataTransfer.getData("text");
-    console.log(data);
-    // получить объект 
-    const id = event.target.appendChild(document.getElementById(data)).id;
-    const curentObj = JSON.parse(localStorage[id]);
+    const data = event.dataTransfer.getData("text");
+    const curentObj = JSON.parse(localStorage[data]);
     curentObj.status = event.currentTarget.id;
-    localStorage[id] = JSON.stringify(curentObj);
-
+    localStorage[data] = JSON.stringify(curentObj);
+    this.localStorage();
   }
 
   render() {
 
     const { popUp, currentValueTitle, currentValueDescrip, storage } = this.state;
-    console.log(storage)
+
 
     return (
       <div className="main">
@@ -123,7 +118,7 @@ class App extends Component {
           onClick={this.addTask}
           className="btn-add">
           Add Task
-            </button>
+        </button>
 
         <div className="table">
           <ToDoList
@@ -151,12 +146,7 @@ class App extends Component {
             storage={storage}
           />
         </div>
-
-
       </div>
-
-
-
     );
   }
 }

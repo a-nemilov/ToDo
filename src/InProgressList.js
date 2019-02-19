@@ -1,5 +1,6 @@
 
 import React, { Component } from "react";
+import './index.css';
 
 class InProgressList extends Component {
 
@@ -9,17 +10,17 @@ class InProgressList extends Component {
 
         return (
             <div
-                onMouseUp={drop}
                 className="inProgress"
                 onDrop={drop}
                 onDragOver={allowDrop}
                 id="inProress"
             >
-                <div>inProgress</div>
+                <div className="yellow">in Progress</div>
                 {arrInProgress.map((e) =>
                     <div
+                        key={e.id}
                         id={e.id}
-                        draggable="true"
+                        draggable
                         className="card"
                         onDragStart={drag}
                     >
@@ -27,9 +28,9 @@ class InProgressList extends Component {
                             id={e.id}
                             onClick={removeCard}
                             className="remove-card">x</div>
-                        <div>{e.title}</div>
-                        <div>{e.description}</div>
-                        <div>{e.status}</div>
+                        <div className="title">{e.title}</div>
+                        <div className="description">{e.description}</div>
+                        <div className="status">{e.status}</div>
                     </div>
                 )}
             </div>

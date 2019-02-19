@@ -50,6 +50,8 @@ code {
   margin-top: 10px;
   border-radius: 5px;
   background-color: #c5f7d2;
+  text-transform: uppercase;
+
 }
 .card {
   border: 1px solid black;
@@ -87,4 +89,45 @@ code {
   border-radius: 5px;
   width: 100%;
 }
+.red {
+  background-color: #d37c7c;
+
+}
+.yellow {
+  background-color: #f2e996;
+}
+.green {
+  background-color: #93d365;
+}
+.red,
+.green,
+.yellow {
+  padding: 10px;
+  text-transform: uppercase;
+}
+.status {
+  font-size: 10px;
+  text-align: left;
+  margin: auto auto 5px 5px;
+}
+.title {
+  text-transform: uppercase;
+  box-shadow: inset 0px 0px 7px rgba(0,0,0,0.2);
+  width: 80%;
+  margin: 5px auto;
+  background-color: white;
+  border-radius: 3px;
+  word-wrap: break-word;
+}
+.description {
+  margin: 5px auto auto;
+  width: 80%;
+  background-color: #dde0db;
+  border-radius: 3px;
+  word-wrap: break-word;
+  text-align: left;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
 

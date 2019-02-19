@@ -13,7 +13,7 @@ class AddTask extends Component {
                     onClick={onClose}
                     className="close">x</button>
 
-                <label htmlFor="title">Title</label> <br />
+                <label htmlFor="title">Title</label>
                 <input
                     type="text"
                     id="title"
@@ -30,10 +30,11 @@ class AddTask extends Component {
 
                 <button
                     className="btn-add"
-                    onClick={onSubmit}>
+                    onClick={onSubmit}
+                    type="submite">
                     Add Task
               </button>
-            </div >
+            </div>
         )
     }
 }
