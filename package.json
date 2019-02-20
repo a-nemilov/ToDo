@@ -6,8 +6,8 @@
     "@material-ui/core": "^3.9.2",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
-    "react-drag-and-drop": "^3.0.0",
-    "react-scripts": "2.1.5"
+    "react-loader-spinner": "^2.3.0",
+    "react-scripts": "2.1.5",
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Loader from 'react-loader-spinner';
 import './index.css';
 import AddTask from './AddTask';
 import ToDoList from './ToDoList';
@@ -11,10 +12,13 @@ class App extends Component {
     popUp: false,
     currentValueTitle: '',
     currentValueDescrip: '',
-    storage: []
+    storage: [],
+    loading: true
   }
   componentDidMount() {
-    this.localStorage();
+    setTimeout(this.localStorage, 5000)
+    setTimeout(() =>
+      this.setState({ loading: false }), 5000);
   }
 
   addTask = () => {
@@ -98,10 +102,11 @@ class App extends Component {
 
   render() {
 
-    const { popUp, currentValueTitle, currentValueDescrip, storage } = this.state;
+    const { popUp, currentValueTitle, currentValueDescrip, storage, loading } = this.state;
 
 
     return (
+
       <div className="main">
         {popUp ?
           <AddTask
@@ -112,6 +117,16 @@ class App extends Component {
             handleChangeDescrip={this.handleChangeDescrip}
             onClose={this.onClose}
           /> : null}
+
+        {loading ? <div className="spinner">
+          <Loader
+            type="ThreeDots"
+            color="#somecolor"
+            height={80}
+            width={80}
+
+          />
+        </div> : null}
 
         <button
           disabled={popUp}
@@ -153,6 +168,3 @@ class App extends Component {
 
 
 export default App;
-
-
-
