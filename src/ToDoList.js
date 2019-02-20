@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './index.css';
-class ToDoList extends Component {
 
+class ToDoList extends Component {
     render() {
         const { drop, allowDrop, drag, removeCard, storage } = this.props;
         const arrToDo = storage.filter(item => item.status === 'toDo');
@@ -9,7 +9,7 @@ class ToDoList extends Component {
             <div
                 className="toDo"
                 id="toDo"
-                draggable="true"
+                draggable="false"
                 onDrop={drop}
                 onDragOver={allowDrop}
             >

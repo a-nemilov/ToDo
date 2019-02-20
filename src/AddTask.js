@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './index.css';
 class AddTask extends Component {
 
-
     render() {
         const { currentValueDescrip, currentValueTitle, handleChangeTitle, onSubmit, handleChangeDescrip, onClose } = this.props;
         return (

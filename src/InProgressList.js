@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import './index.css';
 
 class InProgressList extends Component {
-
     render() {
         const { drop, allowDrop, drag, removeCard, storage } = this.props;
         const arrInProgress = storage.filter(item => item.status === 'inProress');
@@ -14,6 +13,7 @@ class InProgressList extends Component {
                 onDrop={drop}
                 onDragOver={allowDrop}
                 id="inProress"
+                draggable="false"
             >
                 <div className="yellow">in Progress</div>
                 {arrInProgress.map((e) =>

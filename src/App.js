@@ -6,7 +6,6 @@ import ToDoList from './ToDoList';
 import InProgressList from './InProgressList';
 import DoneList from './DoneList';
 
-
 class App extends Component {
   state = {
     popUp: false,
@@ -27,20 +26,18 @@ class App extends Component {
     });
   }
 
-
   localStorage = () => {
     const arr = Object.keys(localStorage).filter((e) => e > 0);
     const storage = arr.map(item => JSON.parse(localStorage.getItem(item)));
     this.setState({
       storage: storage
-    })
-
+    });
   }
   handleChangeTitle = (e) => {
     const value = e.currentTarget.value;
     this.setState({
       currentValueTitle: value,
-    })
+    });
   };
 
   handleChangeDescrip = (e) => {
@@ -103,10 +100,7 @@ class App extends Component {
   render() {
 
     const { popUp, currentValueTitle, currentValueDescrip, storage, loading } = this.state;
-
-
     return (
-
       <div className="main">
         {popUp ?
           <AddTask
@@ -124,7 +118,6 @@ class App extends Component {
             color="#somecolor"
             height={80}
             width={80}
-
           />
         </div> : null}
 
@@ -151,7 +144,6 @@ class App extends Component {
             removeCard={this.removeCard}
             storage={storage}
           />
-
 
           <DoneList
             drop={this.drop}

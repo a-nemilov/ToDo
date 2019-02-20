@@ -12,6 +12,7 @@ class DoneList extends Component {
                 onDragOver={allowDrop}
                 className="done"
                 id="done"
+                draggable="false"
             >
                 <div className="green">Done</div>
                 {arrDone.map((e) =>
